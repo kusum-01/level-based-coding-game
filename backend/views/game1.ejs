@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Game 1 — Programming Quiz</title>
+  <link rel="stylesheet" href="/game1/style.css" />
+</head>
+<body>
+  <!-- ✅ Shared top header (logo, nav, logout, etc.) -->
+  <%- include('partials/header') %>
+
+  <div class="wrap">
+    <header class="topbar">
+      <h1>👩‍💻 Programming Quiz</h1>
+      <div class="user">Hi, <span id="user-name">Player</span></div>
+    </header>
+
+    <!-- SETUP SCREEN -->
+    <section id="setup" class="card">
+      <h2>Choose language & level</h2>
+
+      <div class="row">
+        <label for="language">Language</label>
+        <select id="language">
+          <option value="javascript">JavaScript</option>
+          <option value="python">Python</option>
+          <option value="cpp">C++</option>
+          <option value="java">Java</option>
+        </select>
+      </div>
+
+      <div class="row level-row">
+        <label>Level</label>
+        <div class="levels">
+          <button id="lv1" class="level-btn" data-level="1">Level 1</button>
+          <button id="lv2" class="level-btn locked" data-level="2" disabled>Level 2 🔒</button>
+          <button id="lv3" class="level-btn locked" data-level="3" disabled>Level 3 🔒</button>
+        </div>
+      </div>
+
+      <div class="row">
+        <button id="start-btn" class="primary">Start Level</button>
+      </div>
+
+      <p class="hint">Complete Level 1 to unlock Level 2, then Level 3.</p>
+    </section>
+
+    <!-- QUIZ SCREEN -->
+    <section id="quiz" class="card hidden">
+      <div class="quiz-top">
+        <div id="progress-bar" class="progress-bar">
+          <div id="progress-fill" class="fill" style="width:0%"></div>
+        </div>
+        <div id="progress-text" class="progress-text">Question 0 / 0</div>
+      </div>
+
+      <div id="question-card" class="question-card">
+        <!-- question content injected here -->
+      </div>
+
+      <div class="quiz-controls">
+        <button id="prev-btn" class="secondary" disabled>Previous</button>
+        <button id="next-btn" class="primary">Next</button>
+      </div>
+    </section>
+
+    <!-- RESULT SCREEN -->
+    <section id="result" class="card hidden">
+      <h2>🎉 Level Completed</h2>
+      <p id="result-text">You scored X / Y</p>
+      <div class="row">
+        <button id="play-again" class="primary">Play Again (Same Level)</button>
+        <button id="to-levels" class="secondary">Back to Levels</button>
+      </div>
+    </section>
+
+    <footer class="foot"></footer>
+  </div>
+
+  <script src="/game1/game1.js"></script>
+</body>
+</html>

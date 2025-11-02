@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome - Level Based Coding Game</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <!-- ✅ Shared header -->
+  <%- include('partials/header') %>
+
+  <div class="container">
+    <h1>Welcome to Level-Based Coding Game 🎮</h1>
+
+    <div class="form-container">
+      <input type="text" id="name" placeholder="Name (for signup)">
+      <input type="email" id="email" placeholder="Email">
+      <input type="password" id="password" placeholder="Password">
+
+      <button onclick="signup()">Signup</button>
+      <button onclick="login()">Login</button>
+    </div>
+
+    <p id="message"></p>
+  </div>
+
+  <script src="/script.js"></script>
+</body>
+</html>
+

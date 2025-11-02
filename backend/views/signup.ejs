@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Signup - Level Based Coding Game</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <!-- ✅ Include header -->
+  <%- include('partials/header') %>
+
+  <div class="container">
+    <h2>Create Account</h2>
+
+    <input type="text" id="name" placeholder="Name" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="password" id="password" placeholder="Password" required>
+
+    <button onclick="signup()">Signup</button>
+
+    <p>Already have an account? 
+      <a href="/login">Login</a>
+    </p>
+  </div>
+
+  <script src="/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<header class="header">
+  <div class="logo">
+    <img src="/images/logo.png" alt="Game Logo" class="logo-img">
+    <h2>Level-Based Coding Game</h2>
+  </div>
+
+  <div class="user-info" id="user-section">
+    <!-- Will be filled dynamically -->
+  </div>
+</header>
+
+<script>
+  const storedUser = localStorage.getItem('username');
+  const userSection = document.getElementById('user-section');
+
+  if (storedUser) {
+    userSection.innerHTML = `
+      <span id="user-display">Welcome, <span id="username-text">${storedUser}</span> 👋</span>
+      <button onclick="logout()" class="logout-btn">Logout</button>
+    `;
+  } else {
+    userSection.innerHTML = `
+      <a href="/login" class="auth-link">Login</a> |
+      <a href="/signup" class="auth-link">Signup</a>
+    `;
+  }
+
+  function logout() {
+    localStorage.removeItem('username');
+    window.location.href = '/login';
+  }
+</script>
+
+<style>
+  .auth-link {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+  }
+  .auth-link:hover {
+    text-decoration: underline;
+  }
+  .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header {
+  padding: 8px 20px;
+}
+
+
+  .logo-img {
+  height: 40px;   /* 👈 small fixed height */
+  width: auto;
+  object-fit: contain;
+  margin-right: 10px;
+}
+
+
+</style>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Main - Level Based Coding Game</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <!-- ✅ Include shared header -->
+  <%- include('partials/header') %>
+
+  <div class="container">
+    <h1 id="greeting">🎮 Welcome to Level-Based Coding Game</h1>
+
+    <div class="btn-container">
+      <button onclick="goTo('/game1')">Play Game 1</button>
+      <button onclick="goTo('/game2')">Play Game 2</button>
+      <button onclick="goTo('/game3')">Play Game 3</button>
+    </div>
+
+    <br>
+    <button onclick="logout()" style="background:#e53e3e">Logout</button>
+  </div>
+
+  <script>
+    // ✅ Protect page
+    const username = localStorage.getItem('username');
+    if (!username) {
+      window.location.href = '/login';
+    } else {
+      document.getElementById('greeting').innerText = `Welcome, ${username}!`;
+      document.getElementById('user-display').innerText = username; // show in header
+    }
+
+    // ✅ Navigation
+    function goTo(page) {
+      window.location.href = page;
+    }
+
+    // ✅ Logout
+    function logout() {
+      localStorage.removeItem('username');
+      window.location.href = '/';
+    }
+  </script>
+</body>
+</html>

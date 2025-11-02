@@ -1,0 +1,152 @@
+/* =========================================
+   🌟 GLOBAL STYLES + RESET
+========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(180deg, #2e4e81 0%, #1b2945 100%);
+  color: white;
+}
+
+/* =========================================
+   🎮 HEADER STYLING
+========================================= */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(15, 23, 42, 0.95);
+  color: #fff;
+  padding: 12px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  z-index: 100;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid #38bdf8;
+  background: #111;
+  padding: 4px;
+}
+
+.logo h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.95rem;
+}
+
+#user-display {
+  color: #cbd5e1;
+}
+
+.logout-btn {
+  background: #ef4444;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.logout-btn:hover {
+  background: #dc2626;
+  transform: scale(1.05);
+}
+
+/* =========================================
+   📦 MAIN CONTAINER (Login/Signup/Game)
+========================================= */
+.container {
+  width: 350px;
+  padding: 20px;
+  margin-top: 90px; /* So it’s not hidden behind header */
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+h1, h2, p {
+  color: white;
+}
+
+input {
+  width: 90%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+button {
+  width: 95%;
+  padding: 10px;
+  background: #4CAF50;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 8px 0;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #45a049;
+}
+
+a {
+  color: #d8c7c7;
+  text-decoration: none;
+}
+
+/* =========================================
+   📱 RESPONSIVE HEADER
+========================================= */
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .user-info {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .logo h2 {
+    font-size: 1.1rem;
+  }
+}
