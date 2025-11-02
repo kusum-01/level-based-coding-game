@@ -1,6 +1,3 @@
-
-
-
 main.wrap {
   margin-top: 20px;
   display: flex;
@@ -40,7 +37,7 @@ body {
 .row{margin:12px 0;display:flex;align-items:center;gap:12px}
 .row label{min-width:80px;color:var(--muted)}
 select{padding:8px 10px;border-radius:8px;border:none;background:var(--glass);color:#fff;min-width:180px}
-.primary{background:linear-gradient(90deg,var(--btn-2),#10b981);border:none;color:#fff;padding:10px 16px;border-radius:10px;cursor:pointer}
+.primary{background:linear-gradient(90deg,var(--btn-2),#61b399);border:none;color:#fff;padding:10px 16px;border-radius:10px;cursor:pointer}
 .secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);padding:8px 12px;border-radius:8px;cursor:pointer}
 .levels{display:flex;gap:10px}
 .level-btn{padding:8px 14px;border-radius:10px;border:none;background:transparent;color:#fff;cursor:pointer}
@@ -67,4 +64,139 @@ select{padding:8px 10px;border-radius:8px;border:none;background:var(--glass);co
 @media (max-width:520px){
   .topbar{flex-direction:column;align-items:flex-start;gap:10px}
   .progress-text{display:none}
+}
+
+.quiz-title {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 600;
+  
+  margin-bottom: 24px;
+}
+/* ======= Game Layout Improvements ======= */
+
+/* Center the entire quiz content under header */
+
+
+/* Title just below header */
+.topbar {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.topbar h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.user {
+  font-size: 15px;
+  color: var(--muted);
+}
+
+/* The main game boxes */
+
+
+/* Ensure uniform height feel */
+#setup, #quiz, #result {
+  width: 100%;
+  max-width: 720px;
+}
+
+/* Center the whole content properly below header */
+.wrap {
+  width: min(880px, 96%);
+  padding: 24px;
+  margin: 100px auto 40px; /* space from top and bottom */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Card layout for each screen (setup / quiz / result) */
+.card {
+  width: 100%;
+  max-width: 700px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  padding: 40px 28px;
+  border-radius: 18px;
+  box-shadow: 0 10px 35px rgba(2,6,23,0.7);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:not(.hidden) {
+  margin-top: 20px;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+}
+
+/* Make sure text and buttons stay readable */
+.card h2, .card h3 {
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+
+.primary, .secondary {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 12px;
+}
+
+
+
+/* Add some extra breathing space between question/options */
+.question-card {
+  margin-top: 14px;
+  margin-bottom: 10px;
+}
+
+/* Footer spacing fix */
+.foot {
+  margin-top: 40px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .wrap {
+    gap: 28px;
+  }
+  .card {
+    padding: 20px;
+  }
+  .topbar h1 {
+    font-size: 22px;
+  }
+}
+/* === Floating Navigation Menu === */
+.floating-nav {
+  position: fixed;
+  top: 100px;
+  right: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 300;
+}
+
+.nav-btn {
+  background: #1e1e2f;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+  background: #343456;
+  transform: translateY(-2px);
 }

@@ -48,13 +48,23 @@ document.getElementById("language").addEventListener("change", refreshLevelButto
 refreshLevelButtons();
 
 // level click handlers
-document.querySelectorAll(".level-btn").forEach(b=>{
-  b.addEventListener("click", ()=> {
-    document.querySelectorAll(".level-btn").forEach(x => x.classList.remove("selected"));
-    b.classList.add("selected");
-    chosenLevel = parseInt(b.dataset.level, 10);
+document.querySelectorAll(".level-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".level-btn").forEach(b => b.classList.remove("selected"));
+    btn.classList.add("selected");
+    selectedLevel = btn.dataset.level;
   });
 });
+document.getElementById("start-btn").addEventListener("click", () => {
+  if (!selectedLevel) {
+    alert("Please select a level first!");
+    return;
+  }
+  document.getElementById("setup").classList.add("hidden");
+  document.getElementById("quiz").classList.remove("hidden");
+  startLevel(selectedLevel);
+});
+
 
 // start quiz
 startBtn.addEventListener("click", async () => {
@@ -169,14 +179,18 @@ function finishQuiz() {
 }
 
 // play again (same level)
-playAgain?.addEventListener?.("click", ()=> {
-  result.classList.add("hidden");
-  setup.classList.remove("hidden");
+// Play Again button → restart same level
+document.getElementById("play-again").addEventListener("click", () => {
+  document.getElementById("result").classList.add("hidden");
+  document.getElementById("quiz").classList.remove("hidden");
+  current = 0;
+  score = 0;
+  showQuestion();
 });
 
 // back to levels (setup)
-toLevels?.addEventListener?.("click", ()=> {
-  result.classList.add("hidden");
-  setup.classList.remove("hidden");
+document.getElementById("to-levels").addEventListener("click", () => {
+  document.getElementById("result").classList.add("hidden");
+  document.getElementById("setup").classList.remove("hidden");
   refreshLevelButtons();
 });

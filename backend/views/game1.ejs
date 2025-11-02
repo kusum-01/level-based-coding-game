@@ -9,10 +9,19 @@
 <body>
   <!-- ✅ Shared top header (logo, nav, logout, etc.) -->
   <%- include('partials/header') %>
+ <!-- Floating Navigation Menu -->
+<div class="floating-nav">
+  
+  <button class="nav-btn" onclick="restartLevel()">🔁 Restart</button>
+  <button class="nav-btn"><a href="/main" style="color: white; text-decoration: none">🏠 Home</a></button>
+  
+</div>
 
+
+  
   <div class="wrap">
-    <header class="topbar">
-      <h1>👩‍💻 Programming Quiz</h1>
+    <header class="topbar" style="margin-top: 90px;">
+      <h1 class="quiz-title">👩‍💻 Programming Quiz</h1>
       <div class="user">Hi, <span id="user-name">Player</span></div>
     </header>
 
@@ -74,10 +83,22 @@
         <button id="to-levels" class="secondary">Back to Levels</button>
       </div>
     </section>
+   
 
     <footer class="foot"></footer>
   </div>
+  
 
   <script src="/game1/game1.js"></script>
+  <script>
+    function goBackToLevels() {
+      window.location.href = '/levels'; // redirect to your levels page
+    }
+  
+    function restartLevel() {
+      location.reload(); // simply reloads the current game
+    }
+  </script>
+  
 </body>
 </html>

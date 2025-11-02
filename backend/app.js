@@ -8,14 +8,14 @@ const Question = require("./models/Question");
 
 const app = express();
 
-// ✅ Middleware
+//  Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// ✅ Allow static assets (CSS, JS, images)
+// Allow static assets (CSS, JS, images)
 app.use(express.static(path.join(__dirname, "public")));
 
-// ✅ CORS (for development)
+//  CORS (for development)
 app.use(
   cors({
     origin: ["http://localhost:3000", "http://127.0.0.1:5500", "http://localhost:5500"],
@@ -24,7 +24,7 @@ app.use(
   })
 );
 
-// ✅ MongoDB connection
+//  MongoDB connection
 mongoose
   .connect("mongodb+srv://kusum:wycjoZ-ruwvut-3ryhva@cluster0.cwa4uqm.mongodb.net/levelGameDB?appName=Cluster0", {
     useNewUrlParser: true,
@@ -33,15 +33,15 @@ mongoose
   .then(() => console.log("MongoDB Connected Successfully"))
   .catch((err) => console.error("MongoDB Connection Error:", err));
 
-// ✅ Set EJS as the view engine
+//  Set EJS as the view engine
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-// ✅ API Routes
+// API Routes
 app.use("/api", userRoutes);
 
 // ---------------------
-// 🔐 AUTH ROUTES
+// AUTH ROUTES
 // ---------------------
 app.post("/api/signup", async (req, res) => {
   try {
@@ -71,7 +71,7 @@ app.post("/api/login", async (req, res) => {
 });
 
 // ---------------------
-// 🧩 QUESTIONS API
+//  QUESTIONS API
 // ---------------------
 app.get("/api/questions", async (req, res) => {
   try {
@@ -97,17 +97,19 @@ app.get("/api/questions", async (req, res) => {
 });
 
 // ---------------------
-// 🎨 FRONTEND ROUTES
+// FRONTEND ROUTES
 // ---------------------
 app.get("/", (req, res) => res.render("index"));
 app.get("/signup", (req, res) => res.render("signup"));
 app.get("/main", (req, res) => res.render("main"));
 app.get("/game1", (req, res) => res.render("game1"));
 app.get("/login", (req, res) => res.render("login"));
+app.get('/game3', (req, res) => res.render('game3'));
+
 
 
 // ---------------------
-// 🚀 Start server
+//  Start server
 // ---------------------
 const PORT = 3000;
 app.listen(PORT, () =>

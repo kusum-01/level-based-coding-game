@@ -1,0 +1,49 @@
+<%- include('partials/header') %>
+
+<div class="floating-nav">
+  
+  <button class="nav-btn" onclick="restartLevel()">🔁 Restart</button>
+  <button class="nav-btn"><a href="/main" style="color: white; text-decoration: none">🏠 Home</a></button>
+  
+</div>
+
+<div class="wrap">
+  <h1>Game 3 – Soft Skills & Reasoning</h1>
+
+  <div id="main-menu">
+    <h2>Select a Section</h2>
+    <button onclick="chooseSection('soft')">Soft Skills</button>
+    <button onclick="chooseSection('reason')">Reasoning / DSA</button>
+  </div>
+
+  <div id="soft-menu" class="hidden">
+    <h2>Soft Skills Categories</h2>
+    <button onclick="chooseLevel('english')">English</button>
+    <button onclick="chooseLevel('aptitude')">Aptitude</button>
+    <button onclick="chooseLevel('communication')">Communication</button>
+    <button onclick="chooseLevel('grammar')">Grammar</button>
+    <button onclick="chooseLevel('situation')">Situation-Based</button>
+    <button class="back" onclick="backToMain()">⬅ Back</button>
+  </div>
+
+  <div id="level-menu" class="hidden">
+    <h2>Select Difficulty Level</h2>
+    <button onclick="startQuiz('easy')">Easy</button>
+    <button onclick="startQuiz('medium')">Medium</button>
+    <button onclick="startQuiz('hard')">Hard</button>
+    <button class="back" onclick="backToSoft()">⬅ Back</button>
+  </div>
+
+  <div id="quiz-area" class="hidden">
+    <h2 id="question"></h2>
+    <div id="options"></div>
+    <button id="next-btn" onclick="nextQuestion()">Next</button>
+  </div>
+
+  <div style="margin-top:20px;">
+    <a href="/main" class="back-to-main" style="color: white; text-decoration: none">⬅ Back to Game Selection</a>
+  </div>
+</div>
+
+<link rel="stylesheet" href="/game3/style.css">
+<script src="/game3/script.js"></script>
