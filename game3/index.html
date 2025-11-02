@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game 3 – Soft Skills & Reasoning</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Game 3 – Soft Skills & Reasoning</h1>
+
+  <div id="main-menu">
+    <h2>Select a Section</h2>
+    <button onclick="chooseSection('soft')">Soft Skills</button>
+    <button onclick="chooseSection('reason')">Reasoning / DSA</button>
+  </div>
+
+  <div id="soft-menu" class="hidden">
+    <h2>Soft Skills Categories</h2>
+    <button onclick="chooseLevel('english')">English</button>
+    <button onclick="chooseLevel('aptitude')">Aptitude</button>
+    <button onclick="chooseLevel('communication')">Communication</button>
+    <button onclick="chooseLevel('grammar')">Grammar</button>
+    <button onclick="chooseLevel('situation')">Situation-Based</button>
+    <button class="back" onclick="backToMain()">⬅ Back</button>
+  </div>
+
+  <div id="level-menu" class="hidden">
+    <h2>Select Difficulty Level</h2>
+    <button onclick="startQuiz('easy')">Easy</button>
+    <button onclick="startQuiz('medium')">Medium</button>
+    <button onclick="startQuiz('hard')">Hard</button>
+    <button class="back" onclick="backToSoft()">⬅ Back</button>
+  </div>
+
+  <div id="quiz-area" class="hidden">
+    <h2 id="question"></h2>
+    <div id="options"></div>
+    <button id="next-btn" onclick="nextQuestion()">Next</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
